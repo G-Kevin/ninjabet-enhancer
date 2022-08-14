@@ -88,8 +88,12 @@ function createAndCopyExcelStringToClipboard(orbitLandingDomain) {
     excelString += addFragmentToExcelString(commissionLay);
     excelString += addFragmentToExcelString(orbitNameInExcel);
     excelString += addFragmentToExcelString(status, false);
-   
-    copyToClipboard(excelString);
+
+    navigator.clipboard.writeText(excelString).then(function() {
+      console.log('Copying Excel-String to clipboard was successful!');
+    }, function(err) {
+      console.error('Could not copy Excel-String to clipboard: ', err);
+    });
 }
 
 // Excel needs a special format for percentages...
@@ -122,24 +126,6 @@ function getExcelBookieForQBString(qbstring) {
     });
 
     return bookie;
-}
-
-function copyToClipboard(strToCopy) {
-    // Temporäres Element erzeugen
-    var el = document.createElement('textarea');
-
-    el.value = strToCopy;
-
-    // Element nicht editierbar setzen und aus dem Fenster schieben
-    el.setAttribute('readonly', '');
-    el.style = {position: 'absolute', left: '-9999px'};
-    document.body.appendChild(el);
-
-    el.select();
-    document.execCommand('copy');
-
-    // Temporäres Element löschen
-    document.body.removeChild(el);
 }
 
 function createCopyToExcelButton() {
