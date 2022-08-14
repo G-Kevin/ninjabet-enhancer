@@ -52,7 +52,7 @@ function createAndCopyExcelStringToClipboard(orbitLandingDomain) {
     var betMode = document.getElementById("rbtnAG").checked ? "Freebet" : "normal";
 
     var stakeBack = betMode === "Freebet" ? ("=" + document.querySelector('[name="back-stake"]').value.replace(/\./g, ",")) + "-" + document.querySelector('[name="back-stake"]').value.replace(/\./g, ",") : document.querySelector('[name="back-stake"]').value.replace(/\./g, ",");
-    var stakeLay = document.getElementById("event-lay-amount").value.replace(/\./g, ",");
+    var stakeLay = document.getElementsByClassName("event-liability event-detail")[0].innerText.replace(/€/g, "").replace(/\./g, ",");
     var oddBack = document.querySelector('[name="back-odds"]').value.replace(/\./g, ",");
     var oddLay = document.querySelector('[name="lay-odds"]').value.replace(/\./g, ",");
     oddLay = "=" + oddLay + "/(" + oddLay + "-1)";
