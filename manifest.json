@@ -1,0 +1,39 @@
+{
+  "name": "Ninja-bet.de Enhancer",
+  "description": "Extension to add some extra functionality to Ninja-bet.de",
+  "version": "1.0.0.0",
+  "manifest_version": 2,
+  "browser_action": {
+    "default_popup": "index.html",
+    "default_icon": "favicon.ico"
+  },
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "g-kevin@g-kevin"
+    }
+  },
+  "icons": {
+    "16": "favicon.ico",
+    "48": "favicon.ico",
+    "128": "favicon.ico"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://*.ninja-bet.de/oddsmatcher*"
+      ],
+      "run_at": "document_end",
+      "js": [
+        "config.js",
+        "jquery-3.6.0.min.js",
+        "module-excelcopybutton.js",
+        "module-linkchanger.js",
+        "main.js"
+      ]
+    }
+  ],
+  "permissions": [
+    "activeTab",
+    "https://*.ninja-bet.de/oddsmatcher*"
+  ]
+}
