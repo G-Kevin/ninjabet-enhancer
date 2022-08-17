@@ -5,8 +5,7 @@ function createAndCopyExcelStringToClipboard(orbitLandingDomain) {
     var betType = "1X2";
     var league = "";
     try {
-        // todo
-        var bookie = document.getElementsByClassName("event-back-oddsprovider")[0];
+        var bookie = document.getElementsByClassName("bookie-bet-url")[0].getElementsByClassName("event-back-oddsprovider")[0].textContent;
         bookie = getExcelBookieForQBString(bookie);
     } catch {
         var bookie = "";
