@@ -14,7 +14,7 @@ function createAndCopyExcelStringToClipboard(orbitLandingDomain) {
 
     var sportImage = document.getElementById("calc-event-name").parentNode.parentNode.getElementsByTagName("td")[0].getElementsByTagName("img")[0].getAttribute("src").replace(/.*\/(.*)\..*/g, '$1');
     switch(sportImage) {
-      case "football.png":
+      case "football":
         var sport = "Fußball";
         break;
       default:
