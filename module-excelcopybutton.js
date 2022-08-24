@@ -2,7 +2,6 @@ function createAndCopyExcelStringToClipboard(orbitLandingDomain) {
     var status = "Offen";
     var excelString = "";
     var category = "Pre-Game";
-    var betType = "1X2";
     var league = "";
     try {
         var bookie = document.getElementsByClassName("bookie-bet-url")[0].getElementsByClassName("event-back-oddsprovider")[0].textContent;
@@ -44,12 +43,33 @@ function createAndCopyExcelStringToClipboard(orbitLandingDomain) {
         var event = "";
     }
 
+
     try {
-        var ergebnis = document.getElementsByClassName("event-outcome event-back-outcome")[0].textContent ;
-        var mannschaft1 = event.replace(/\sv\s.*/g, '');
-        var tipBack = ergebnis === mannschaft1 ? "1" : ergebnis === "Unentschieden" ? "X" : "2";
+        var ergebnis = document.getElementsByClassName("event-outcome event-back-outcome")[0].textContent.toLowerCase();
+        switch (true) {
+             case /beide\streffen\s(ja|nein)/g.test(ergebnis):
+                 var betType = "BothToScore";
+                 var tipBack = ergebnis.replace(/.*\s/g, '') === "ja" ? "yes" : "no";
+               break;
+             case /(über|unter)\s?\d+\.\d/.test(ergebnis):
+                 var betType = "O/U";
+                 var tipBack = ergebnis.replace(/\s.*/g, '') === "über" ? "o" : "u";
+                 tipBack += ergebnis.replace(/.*\s/g, '');
+               break;
+             case /1\.\shz\s(über|unter)\s-\s\d\.\d/.test(ergebnis):
+                 var betType = "O/U";
+                 var tipBack = ergebnis.replace(/(\d\.).*/, '$1 HZ ');
+                 tipBack += ergebnis.replace(/\d\.\shz\s/g, '').replace(/\s-\s\d\.\d/g, '') === "über" ? "o" : "u";
+                 tipBack += ergebnis.replace(/\d\.\shz\s(über|unter)\s-\s/g, '');
+               break;
+             default:
+                 var betType = "1X2";
+                 var tipBack = ergebnis === event.replace(/\sv\s.*/g, '') ? "1" : ergebnis === "unentschieden" ? "X" : "2";
+               break;
+           }
         var tipLay = "lay" + tipBack;
     } catch {
+        var betType = "1X2";
         var tipBack = "";
         var tipLay = "";
     }
