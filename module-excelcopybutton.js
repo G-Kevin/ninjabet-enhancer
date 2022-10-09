@@ -68,7 +68,7 @@ function createAndCopyExcelStringToClipboard(orbitLandingDomain) {
                break;
              default:
                  var betType = "1X2";
-                 var tipBack = ergebnis === event.replace(/\sv\s.*/g, '') ? "1" : ergebnis === "unentschieden" ? "X" : "2";
+                 var tipBack = ergebnis === event.toLowerCase().replace(/\sv\s.*/g, '') ? "1" : ergebnis === "unentschieden" ? "X" : "2";
                break;
            }
         var tipLay = "lay" + tipBack;
