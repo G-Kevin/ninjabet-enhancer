@@ -46,7 +46,7 @@ const lookupBookiesExcel = {
 	"tipster" : "Tipster",
 	"tipwin" : "TipWin",
 	"tornadobet" : "",
-	"twentybet" : "",
+	"twentybet" : "20Bet",
 	"unibet" : "unibet.de (AT)",
 	"wettarena" : "Wettarena",
 	"william hill" : "WilliamHill (AT)",
