@@ -62,6 +62,10 @@ function createAndCopyExcelStringToClipboard(orbitLandingDomain) {
                  tipBack += ergebnis.replace(/\d\.\shz\s/g, '').replace(/\s-\s\d\.\d/g, '') === "über" ? "o" : "u";
                  tipBack += ergebnis.replace(/\d\.\shz\s(über|unter)\s-\s/g, '');
                break;
+             case /1\.\shz\s-\s[12x]/.test(ergebnis):
+                 var betType = "1. HZ 1X2";
+                 var tipBack = ergebnis.replace(/\s-\s/, ' ').toUpperCase();
+               break;
              case /^(1x|12|x2)$/.test(ergebnis):
                  var betType = "doubleChance";
                  var tipBack = ergebnis.toUpperCase();
