@@ -15,6 +15,9 @@ function createAndCopyExcelStringToClipboard(orbitLandingDomain) {
       case "football":
         var sport = "Fußball";
         break;
+    case "calcio":
+        var sport = "Fußball";
+        break;
        case "tennis":
         var sport = "Tennis";
         break;
