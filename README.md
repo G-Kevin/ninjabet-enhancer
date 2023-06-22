@@ -1,6 +1,6 @@
 # Quotenbulle.de Enhancer
 
-A chrome extension to add some extra non-exististing functionality to Ninja-bet.de.
+An extension to add some extra non-exististing functionality to Ninja-bet.de.
 
 ## Features
 
@@ -25,12 +25,16 @@ second: great expense firefox install
 - zip the folder, take care there is no root folder in the zip
 - rename zip to xpi
 - go to Addons, click gear, install from file and select xpi
+- 
+OR
+
+- go to Addons, click gear, install from file and select xpi in firefox folder from this repository or drag&drop this xpi
 
 third: update
 - git pull
 - go to extensions menu in browser
 - click refresh at this extension (chrome)
-- go to Addons, click gear, install from file and select xpi (firefox)
+- go to Addons, click gear, install from file and select xpi or drag&drop xpi (firefox)
 
 ## Browsers working
 
@@ -42,7 +46,6 @@ checked with
 # Disclaimer
 
 I am not in touch with Ninja-bet.de or Orbit Exchange at all.
-
 
 # Other
 ## add jQuery to developer console
