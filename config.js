@@ -31,7 +31,7 @@ const lookupBookiesExcel = {
 	"leovegas" : "LeoVegas",
 	"lsbet" : "LSBet",
 	"mobilebet" : "Mobilebet",
-	"mrgreen" : "MrGreen (AT)",
+	"mrgreen" : "MrGreen",
 	"mybet" : "mybet.de",
 	"netbet" : "Netbet",
 	"Neobet" : "NeoBet",
