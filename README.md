@@ -25,7 +25,7 @@ second: great expense firefox install
 - zip the folder, take care there is no root folder in the zip
 - rename zip to xpi
 - go to Addons, click gear, install from file and select xpi
-- 
+
 OR
 
 - go to Addons, click gear, install from file and select xpi in firefox folder from this repository or drag&drop this xpi
@@ -46,8 +46,3 @@ checked with
 # Disclaimer
 
 I am not in touch with Ninja-bet.de or Orbit Exchange at all.
-
-# Other
-## add jQuery to developer console
-    var script = document.createElement('script');
-    script.src = "https://code.jquery.com/jquery-3.6.0.min.js";document.getElementsByTagName('head')[0].appendChild(script);
